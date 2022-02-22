@@ -2,3 +2,278 @@
     box-sizing: border-box;
     margin: 0;
 }
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    /* font-family: 'Share Tech Mono', monospace; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    background: dimgray;
+    background-image: linear-gradient(45deg, rgba(85, 85, 85, 0.8) 0%, rgba(146, 144, 144, 0.7) 100%), url('https://picsum.photos/960/?blur=3');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: whitesmoke;
+}
+
+footer a {
+    color: lightsalmon;
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightsalmon;
+    text-decoration: underline;
+}
+
+.active-link{
+    color: lightsalmon;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#time {
+    font-size: 7rem;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+#ampm {
+    font-size: 3rem;
+}
+
+#greeting {
+    margin-bottom: 3rem;
+}
+
+#greeting h1, #greeting h2, #greeting h3 {
+    text-align: center;
+}
+
+#today h1, #today h2, #today h3 {
+    text-align: center;
+}
+
+#today {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: whitesmoke;
+    opacity: .8;
+}
+
+#goal-wrap {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#done {
+    padding: 5px;
+    cursor: pointer;
+    color: lightsalmon;
+    font-weight: bold;
+    visibility: hidden;
+    font-size: 2rem;
+}
+
+#goal-wrap:hover #done {
+    visibility: visible;
+}
+
+.goal {
+    min-width: 100%;
+    border: none;
+    border-bottom: solid 1px;
+    padding: 5px;
+    font-size: 1.5rem;
+    text-align: center;
+    max-width: 90vw;
+}
+
+.goal:focus {
+    outline: none;
+}
+
+#phokus {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+
+
+#quote {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: whitesmoke;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+#name:hover {
+    border-bottom: 1px solid;
+    cursor: pointer;
+}
+
+/* Name Changer Light Box */
+
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(245, 245, 245, 0.95);
+    transition: linear;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#name-holder {
+    z-index: 2;
+    border: none;
+    border-bottom: solid 1px;
+    padding: 10px;
+    font-size: 2rem;
+    text-align: center;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0);
+    margin-bottom: 2rem;
+    opacity: 1;
+    animation: fade 1s linear;
+}
+
+#name-holder:focus {
+    outline: none;
+}
+
+#name-button {
+    min-width: 70px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#name-button:focus {
+    outline: none;
+}
+
+#name-button:hover {
+    font-size: 2rem;
+}
+
+/* button player styles */
+#players {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* flex-direction: row; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; padding: 5px; }
+
+
+/* Class to change */
+
+.invalid-input::placeholder {
+    color: rgb(207, 92, 115);
+}
+
+/* Animations */
+
+@keyframes fade {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@media screen and (max-width:620px){
+    #players {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    #time {
+        font-size: 6rem;
+
+    }
+}
+
+@media screen and (max-width:540px){
+    #players {
+        gap: 1rem;
+    }
+    #time {
+        font-size: 4rem;
+    }
+    #greeting h1 {
+        font-size: 1.8rem;
+    }
+    #ampm {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width:420px){
+    #time {
+        font-size: 3rem;
+    }
+    #greeting h1 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1.2rem;
+    }
+    #goal {
+        font-size: 1.2rem;
+    }
+    #goal-wrap {
+        flex-direction: column;
+    }
+    #ampm {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:250px){
+    #players {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
