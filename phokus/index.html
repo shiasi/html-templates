@@ -5,12 +5,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="assets/style.css">
     <title>Phokus - A KISS todo focus app</title>
 </head>
 
 <body>
+    <div id="lightbox">
+        <input type="text" name="name" id="name-holder" placeholder="What's your name?">
+    </div>
+    <div id="phokus">PHOKUS</div>
 
+    <main id="content">
+        <div id="players">
+            <audio id="snd-campfire" class="white-noise" loop>
+                <source src="musics/campfire.ogg" type="audio/ogg">
+            </audio>
+            <audio  id="snd-city" class="white-noise"  loop>
+                <source src="musics/city.ogg" type="audio/ogg">
+            </audio>
+            <audio   id="snd-clock" class="white-noise"  loop>
+                <source src="musics/clock.ogg" type="audio/ogg">
+            </audio>
+            <audio   id="snd-crowd" class="white-noise"  loop>
+                <source src="musics/crowd.ogg" type="audio/ogg">
+            </audio>
+            <audio   id="snd-rain" class="white-noise"  loop>
+                <source src="musics/rain.ogg" type="audio/ogg">
+            </audio>
+            <audio  id="snd-wind" class="white-noise"  loop>
+                <source src="musics/wind.ogg" type="audio/ogg">
+            </audio>
+            
+            <a href="#" id="snd-campfire-btn" class="material-icons md-48">local_fire_department</a>
+            <a href="#" id="snd-city-btn" class="material-icons md-48">location_city</a>
+            <a href="#" id="snd-clock-btn" class="material-icons md-48">alarm</a>
+            <a href="#" id="snd-crowd-btn" class="material-icons md-48">groups</a>
+            <a href="#" id="snd-rain-btn" class="material-icons md-48">grain</a>
+            <a href="#" id="snd-wind-btn" class="material-icons md-48">air</a>
+        </div>
+
+        <time id="time"><span id="hour">21</span>:<span id="min">11</span>:<span id="sec">25</span> <span id="ampm">AM</span> </time>
+        <div id="greeting">
+            <h1>
+                <span id="greet">Good Time, </span>
+                <em><span id="name" tabindex="0">Name</span></em>.
+            </h1>
+        </div>
+        <div id="today">
+            <h3>What's Your Goal, Today?</h3>
+            <div id="goal-wrap">
+                <span id="goal" class="goal" contenteditable="true" tabindex="0"></span>
+                <span id="done" tabindex="0">&#10004;</span>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div id="quote">"Quote of the Day"</div>
+        Phokus, made with &#x2615; by <a href="http://shevina.ir" target="_blank"><strong>Shevina</strong></a>
+    </footer>
+    
+    <script src="assets/script.js"></script>
 </body>
 
 </html>
